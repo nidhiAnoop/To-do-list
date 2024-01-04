@@ -1,0 +1,31 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <!-- Include the Tailwind CSS file -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+
+<div class="container mx-auto p-4">
+    <div class="max-w-md mx-auto bg-white rounded p-6 shadow-md">
+        <h2 class="text-2xl font-bold mb-4">TODOS</h2>
+
+        <!-- To-Do Form -->
+        <form method="post" action="{% url 'add_todo' %}" class="mt-4 space-y-4">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">
+                Add Todo
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Include any additional scripts here -->
+</body>
+</html>
